@@ -31,7 +31,7 @@ DNS name of PC where program is running. Messages about restreaming should appea
 
 ## Dependencies
 * C++11 compiler (tested on MSVCv14.29, gcc 8.3.0)
-* EasyRTMP
+* [EasyRTMP](https://github.com/AlexanderBabansky/EasyRTMP)
 * OpenSSL (optional, to support RTMPS)
 
 ## Building 
