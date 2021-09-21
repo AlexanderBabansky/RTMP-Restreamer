@@ -1,13 +1,13 @@
 # RTMP Restreamer
 Portable RTMP restreaming tool. Starts server, accepts any stream and restreams it to multiple destinations without reencoding.
 
-##Usage
+## Usage
 To get help:
 ```C
 rtmp_restreamer --help
 ```
 
-##Config file
+## Config file
 Program searches config file *config.json* in executable directory, but you can
 set path with -c flag. Config file contains routing matrix of restreaming. Server
 accepts many streams and restreams every accepted stream to multiple destinations.
@@ -16,7 +16,7 @@ YouTube, Twitch, and stream with key *restream2* to custom server. *key* is
 streaming key. Note, to use RTMPS, program must be built with OpenSSL.
 ```json
 {
-    "key1": [
+    "restream": [
         "rtmps://live-api-s.facebook.com:443/rtmp/key",
         "rtmp://a.rtmp.youtube.com/live2/key"
         "rtmp://waw.contribute.live-video.net/app/key"
@@ -26,6 +26,8 @@ streaming key. Note, to use RTMPS, program must be built with OpenSSL.
     ]
 }
 ```
+Point your encoder to *rtmp://{host}/app/restream* where host is IP address or
+DNS name of PC where program is running. Messages about restreaming should appear.
 
 ## Dependencies
 * C++11 compiler (tested on MSVCv14.29, gcc 8.3.0)
